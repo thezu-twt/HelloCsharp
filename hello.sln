@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingChar", "UsingChar\Usin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VariablesExpressions", "VariablesExpressions\VariablesExpressions.csproj", "{8BCEFA90-1DA0-4B31-914F-55EFE1B6ED52}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowControl", "FlowControl\FlowControl.csproj", "{2F090F50-E183-425E-8DC0-7643630742C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{8BCEFA90-1DA0-4B31-914F-55EFE1B6ED52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BCEFA90-1DA0-4B31-914F-55EFE1B6ED52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BCEFA90-1DA0-4B31-914F-55EFE1B6ED52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F090F50-E183-425E-8DC0-7643630742C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F090F50-E183-425E-8DC0-7643630742C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F090F50-E183-425E-8DC0-7643630742C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F090F50-E183-425E-8DC0-7643630742C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
