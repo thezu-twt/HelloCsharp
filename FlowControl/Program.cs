@@ -116,9 +116,10 @@ namespace FlowControl
                     Console.WriteLine("星期日為一週的第{0}天", (int)WeekDay.SUN);
                     break;
             }
+
             //列舉型別3
             Console.Write("請輸入成績:A, B, C, D, F: ");
-            Grade grade1 = (Grade)Enum.Parse(typeof(Grade), Console.ReadLine());
+            Grade grade1 = (Grade)Enum.Parse(typeof(Grade), Console.ReadLine()); //!!!!若輸入A, B, C, D, F以外的字母???
             switch (grade1)
             {
                 case Grade.A:
@@ -141,6 +142,38 @@ namespace FlowControl
                     break;
             }
 
+            //1~100的偶數和
+            int sum = 0;
+            int i;
+            for (i = 2; i <= 100; i += 2)
+            {
+                sum += i;
+            }
+            Console.WriteLine(sum);
+
+            //九九乘法
+            int x, y;
+            for (x = 1; x <= 9; x++)
+            {
+                for (y = 1; y <= 9; y++)
+                {
+                    Console.Write("{0}*{1}={2} ", x, y, x * y); //int換char
+                }
+                Console.WriteLine(); //換行
+            }
+
+            //1/n求加到無限大
+            const double THRESHOLD = 1.0e-8;
+            double sum1 = 0;
+            int n = 1;
+            double term = 1;
+            while (Math.Abs(term) > THRESHOLD)
+            {
+                sum1 += term;
+                ++n;
+                term = 1 / n;
+            }
+            Console.WriteLine(sum1);
         }
 
     }
