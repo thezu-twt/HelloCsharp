@@ -118,29 +118,38 @@ namespace FlowControl
             }
 
             //列舉型別3
+            char symbol;
             Console.Write("請輸入成績:A, B, C, D, F: ");
-            Grade grade1 = (Grade)Enum.Parse(typeof(Grade), Console.ReadLine()); //!!!!若輸入A, B, C, D, F以外的字母???
-            switch (grade1)
+            symbol = Console.ReadLine().ToCharArray()[0]; //若輸入A, B, C, D, F以外的字母
+            if (symbol == 'A' || symbol == 'B'|| symbol =='C'|| symbol =='D'|| symbol == 'F')
             {
-                case Grade.A:
-                    Console.WriteLine("成績優異");
-                    break;
-                case Grade.B:
-                    Console.WriteLine("成績良好");
-                    break;
-                case Grade.C:
-                    Console.WriteLine("成績中等");
-                    break;
-                case Grade.D:
-                    Console.WriteLine("成績尚可");
-                    break;
-                case Grade.F:
-                    Console.WriteLine("不及格");
-                    break;
-                default:
-                    Console.WriteLine("成績錯誤");
-                    break;
+                Grade grade1 = (Grade)Enum.Parse(typeof(Grade), Console.ReadLine());
+                switch (grade1)
+                {
+                    case Grade.A:
+                        Console.WriteLine("成績優異");
+                        break;
+                    case Grade.B:
+                        Console.WriteLine("成績良好");
+                        break;
+                    case Grade.C:
+                        Console.WriteLine("成績中等");
+                        break;
+                    case Grade.D:
+                        Console.WriteLine("成績尚可");
+                        break;
+                    case Grade.F:
+                        Console.WriteLine("不及格");
+                        break;
+                    default:
+                        break;
+                }
             }
+            else
+            {
+                Console.WriteLine("成績輸入錯誤");
+            }
+
 
             //1~100的偶數和
             int sum = 0;
@@ -162,18 +171,64 @@ namespace FlowControl
                 Console.WriteLine(); //換行
             }
 
-            //1/n求加到無限大
+            //1/n求加到無限大 //錯了！
             const double THRESHOLD = 1.0e-8;
             double sum1 = 0;
             int n = 1;
-            double term = 1;
-            while (Math.Abs(term) > THRESHOLD)
+            double term = 1; //a0
+            while (Math.Abs(term) < THRESHOLD)
             {
                 sum1 += term;
                 ++n;
-                term = 1 / n;
+                term = 1 / n; //an
             }
             Console.WriteLine(sum1);
+
+            //班級成績登記
+            double StuGrade;
+            double ClassGrade = 0.0;
+            int StuNum = 0;
+            while (true)
+            {
+                Console.WriteLine("請輸入成績");
+                StuGrade = double.Parse(Console.ReadLine());
+                if (StuGrade < 0) break;
+                Console.WriteLine("成績為 {0}", StuGrade);
+                StuNum += 1;
+                ClassGrade += StuGrade;
+            }
+            Console.WriteLine("班級人數 {0}", StuNum);
+            Console.WriteLine("班級平均 {0}", ClassGrade / StuNum);
+
+            //是不是質數
+            Console.WriteLine("請輸入整數");
+            int prime = int.Parse(Console.ReadLine());
+            int add = 2;
+            int answer = 0;
+            if (prime == 1 || prime == 2)
+            {
+                Console.WriteLine("是質數");
+            }
+            else
+            {
+                while (add < prime)
+                {
+                    if (prime % add == 0)
+                    {
+                        answer = 1;
+                        break;
+                    }
+                    add++;
+                }
+                if (answer == 1)
+                {
+                    Console.WriteLine("不是質數");
+                }
+                else
+                {
+                    Console.WriteLine("是質數");
+                }
+            }
         }
 
     }
