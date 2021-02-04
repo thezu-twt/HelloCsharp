@@ -45,6 +45,25 @@ namespace array
                 }
                 Console.WriteLine("");
             }
+            char[,] square = new char[3, 3];
+            square[0, 0] = '4';
+            square[0, 1] = '9';
+            square[0, 2] = '2';
+            square[1, 0] = '3';
+            square[1, 1] = '5';
+            square[1, 2] = '7';
+            square[2, 0] = '8';
+            square[2, 1] = '1';
+            square[2, 2] = '6';
+            int j;
+            for (i = 0; i < 3; ++i)
+            {
+                for (j = 0; j < 3; ++j)
+                {
+                    Console.Write(square[i, j]);
+                }
+                Console.WriteLine(" ");
+            }
         }
     }
 }
